@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFFFF0;
+}
+
+.control {
+    display: flex;
+}
+
+.mainbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.heading img {
+    width: 230px;
+    display: flex;
+    background-color: rgb(45, 152, 117);
+    margin-left: 70px;
+}
+
+.board {
+    background-image: url("image/snakeladder.jpg");
+    background-size: cover;
+    width: 550px;
+    height: 550px;
+    border: 1.9px solid black;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    position: relative;
+}
+
+.counters {
+    display: flex;
+    margin-top: 330px;
+    height: 200px;
+    width: 40px;
+    gap: 1.7px;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* position: absolute; */
+}
+
+.counter1 {
+    margin-left: 3px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    background-color: rgb(226, 43, 43);
+    border-radius: 50%;
+    position: absolute; 
+    z-index: 20; 
+}
+
+.counter2 {
+    margin-left: 3px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: rgb(161, 74, 243);
+    position: absolute; 
+    z-index: 20;
+}
+
+.cell {
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;/* Hide cell numbers */
+  
+}
+
+
+
+.diceBox {
+    width: 240px;
+    height: 190px;
+    border: 2px solid black;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: rgb(203, 225, 255);
+    margin-top: 35px;
+    border: 2px solid rgb(166, 189, 226);
+}
+
+.diceScore {
+    display: flex;
+}
+
+.diceNo {
+    margin-top: 60px;
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.diceBox button {
+    height: 33px;
+    border-radius: 12.5px;
+    color: rgb(18, 18, 205);
+    box-shadow: 2px 2px 12px blueviolet;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    font-size: 16px;
+    border: 2px solid rgb(90, 175, 255);
+}
+
+.reset{
+     height: 33px;
+     width: 120px;
+    border-radius: 12.5px;
+    color: rgb(18, 18, 205);
+    box-shadow: 2px 2px 12px blueviolet;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    font-size: 16px;
+    border: 2px solid rgb(90, 175, 255);
+    margin-top: 30px;
+    margin-left: 60px;
+    
+}
+
+.btn5::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(177, 237, 14);
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: .8s;
+}
+
+.btn5::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(177, 237, 14);
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: .7s;
+}
+
+.btn5:hover {
+    color: white;
+    text-shadow: 3px 3px 14px rgba(66, 241, 223, 0.971);
+    transition: .6s;
+    border-color: antiquewhite;
+}
+
+.btn5:hover::before {
+    transform: translateX(-50%) rotate(180deg);
+    transition: .5s;
+}
+
+.btn5:hover::after {
+    transform: translateX(50%) rotate(180deg);
+    transition: .5s;
+}
+
+.diceBox img {
+    width: 130px;
+}
+
+
+@media (max-width: 480px) {
+  body {
+    transform: rotate(90deg);
+    transform-origin: top left;
+    width: 100vh;  
+    height: 100vw;
+    overflow-x: hidden; 
+    position: relative;
+  }
+  
+  .mainbody {
+    width: 100vh;  
+    height: 100vw;
+    overflow: auto;
+  }
+}
